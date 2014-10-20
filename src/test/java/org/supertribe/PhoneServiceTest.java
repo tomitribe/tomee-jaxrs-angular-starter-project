@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.superbiz;
+package org.supertribe;
 
 import org.apache.cxf.jaxrs.client.WebClient;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -27,11 +27,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
+import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * Arquillian will start the container, deploy all @Deployment bundles, then run all the @Test methods.
@@ -45,7 +43,7 @@ import java.net.URL;
  *
  */
 @RunWith(Arquillian.class)
-public class ColorServiceTest extends Assert {
+public class PhoneServiceTest extends Assert {
 
     /**
      * ShrinkWrap is used to create a war file on the fly.
@@ -58,7 +56,7 @@ public class ColorServiceTest extends Assert {
      */
     @Deployment
     public static WebArchive createDeployment() {
-        return ShrinkWrap.create(WebArchive.class).addClasses(ColorService.class, Color.class);
+        return ShrinkWrap.create(WebArchive.class).addClasses(Phone.class, PhoneService.class);
     }
 
     /**
@@ -73,60 +71,23 @@ public class ColorServiceTest extends Assert {
     @ArquillianResource
     private URL webappUrl;
 
-
     @Test
-    public void postAndGet() throws Exception {
-
-        // POST
-        {
-            final WebClient webClient = WebClient.create(webappUrl.toURI());
-            final Response response = webClient.path("color/green").post(null);
-
-            assertEquals(204, response.getStatus());
-        }
-
-        // GET
-        {
-            final WebClient webClient = WebClient.create(webappUrl.toURI());
-            final Response response = webClient.path("color").get();
-
-            assertEquals(200, response.getStatus());
-
-            final String content = slurp((InputStream) response.getEntity());
-
-            assertEquals("green", content);
-        }
-
-    }
-
-    @Test
-    public void getColorObject() throws Exception {
+    public void getPhoneList() throws Exception {
 
         final WebClient webClient = WebClient.create(webappUrl.toURI());
         webClient.accept(MediaType.APPLICATION_JSON);
 
-        final Color color = webClient.path("color/object").get(Color.class);
+        final Collection<? extends Phone> phones = webClient.path("phone/list").getCollection(Phone.class);
 
-        assertNotNull(color);
-        assertEquals("orange", color.getName());
-        assertEquals(0xE7, color.getR());
-        assertEquals(0x71, color.getG());
-        assertEquals(0x00, color.getB());
-    }
+        assertEquals(5, phones.size());
 
-    /**
-     * Reusable utility method
-     * Move to a shared class or replace with equivalent
-     */
-    public static String slurp(final InputStream in) throws IOException {
-        final ByteArrayOutputStream out = new ByteArrayOutputStream();
-        final byte[] buffer = new byte[1024];
-        int length;
-        while ((length = in.read(buffer)) != -1) {
-            out.write(buffer, 0, length);
-        }
-        out.flush();
-        return new String(out.toByteArray());
+        final Iterator<? extends Phone> it = phones.iterator();
+        assertEquals("motorola-xoom-with-wi-fi", it.next().getId());
+        assertEquals("motorola-xoom", it.next().getId());
+        assertEquals("samsung-galaxy-tab", it.next().getId());
+        assertEquals("droid-pro-by-motorola", it.next().getId());
+        assertEquals("t-mobile-g2", it.next().getId());
+
     }
 
 }
