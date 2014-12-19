@@ -1,5 +1,7 @@
 # Apache TomEE JAX-RS AngularJS Starter Project
 
+[Open this project in Codenvy](https://codenvy.com/f?id=txyrkzj4hzyjhw9x)
+
 The only thing better than a Maven archetype is a repo you can fork with everything already setup.  Skip the documentation and just fork-and-code.  This starter project contains:
 
  - Java
