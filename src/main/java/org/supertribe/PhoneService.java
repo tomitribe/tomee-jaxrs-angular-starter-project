@@ -42,7 +42,7 @@ public class PhoneService {
 
                 new Phone(1, "", "motorola-xoom", "MOTOROLA XOOM(tm)", "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."),
 
-                new Phone(8, "", "samsung-galaxy-tab", "Samsung Galaxy Tab(tm)", "Feel Free to Tab(tm). The Samsung Galaxy Tab(tm) brings you an ultra-mobile entertainment experience through its 7\u201d display, high-power processor and Adobe\u00ae Flash\u00ae Player compatibility."),
+                new Phone(8, "", "samsung-galaxy-tab", "Samsung Galaxy Tab(tm)", "Feel Free to Tab(tm). The Samsung Galaxy Tab(tm) brings you an ultra-mobile entertainment experience through its 7\" display, high-power processor and Adobe(R) Flash(R) Player compatibility."),
 
                 new Phone(11, "Verizon", "droid-pro-by-motorola", "DROID(tm) Pro by Motorola", "The next generation of DOES."),
 
