@@ -38,13 +38,13 @@ public class PhoneService {
     public List<Phone> getPhones() {
 
         return Arrays.asList(
-                new Phone(0, "", "motorola-xoom-with-wi-fi", "Motorola XOOM\u2122 with Wi-Fi", "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."),
+                new Phone(0, "", "motorola-xoom-with-wi-fi", "Motorola XOOM(tm) with Wi-Fi", "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."),
 
-                new Phone(1, "", "motorola-xoom", "MOTOROLA XOOM\u2122", "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."),
+                new Phone(1, "", "motorola-xoom", "MOTOROLA XOOM(tm)", "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."),
 
-                new Phone(8, "", "samsung-galaxy-tab", "Samsung Galaxy Tab\u2122", "Feel Free to Tab\u2122. The Samsung Galaxy Tab\u2122 brings you an ultra-mobile entertainment experience through its 7\u201d display, high-power processor and Adobe\u00ae Flash\u00ae Player compatibility."),
+                new Phone(8, "", "samsung-galaxy-tab", "Samsung Galaxy Tab(tm)", "Feel Free to Tab(tm). The Samsung Galaxy Tab(tm) brings you an ultra-mobile entertainment experience through its 7\u201d display, high-power processor and Adobe\u00ae Flash\u00ae Player compatibility."),
 
-                new Phone(11, "Verizon", "droid-pro-by-motorola", "DROID\u2122 Pro by Motorola", "The next generation of DOES."),
+                new Phone(11, "Verizon", "droid-pro-by-motorola", "DROID(tm) Pro by Motorola", "The next generation of DOES."),
 
                 new Phone(18, "", "t-mobile-g2", "T-Mobile G2", "The T-Mobile G2 with Google is the first smartphone built for 4G speeds on T-Mobile's new network. Get the information you need, faster than you ever thought possible.")
 
