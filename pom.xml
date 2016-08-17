@@ -17,38 +17,34 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         
   <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+        <artifactId>microprofile-conference</artifactId>
+        <groupId>io.microprofile.showcase</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
 
-  <!-- Change: groupId, artifactId, version -->
-  <groupId>org.supertribe</groupId>
-  <artifactId>tomee-rest-angular</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <artifactId>web-application</artifactId>
+  <name>Conference :: Web</name>
 
   <packaging>war</packaging>
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.openejb</groupId>
+      <groupId>org.apache.tomee</groupId>
       <artifactId>javaee-api</artifactId>
-      <version>${openejb.javaee.api}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.openejb</groupId>
+      <groupId>org.apache.tomee</groupId>
       <artifactId>arquillian-tomee-embedded</artifactId>
-      <version>${tomee.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.openejb</groupId>
+      <groupId>org.apache.tomee</groupId>
       <artifactId>tomee-jaxrs</artifactId>
-      <version>${tomee.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -57,23 +53,14 @@
     <finalName>ROOT</finalName>
     <plugins>
       <plugin>
-        <groupId>org.apache.openejb.maven</groupId>
+        <groupId>org.apache.tomee.maven</groupId>
         <artifactId>tomee-maven-plugin</artifactId>
-        <version>${tomee.version}</version>
         <configuration>
-          <tomeeVersion>${tomee.version}</tomeeVersion>
+          <tomeeVersion>${version.tomee}</tomeeVersion>
           <tomeeClassifier>jaxrs</tomeeClassifier>
         </configuration>
       </plugin>
     </plugins>
   </build>
 
-  <properties>
-    <tomee.version>1.7.1</tomee.version>
-    <openejb.javaee.api>6.0-6</openejb.javaee.api>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <failOnMissingWebXml>false</failOnMissingWebXml>
-    <maven.compiler.target>1.7</maven.compiler.target>
-    <maven.compiler.source>1.7</maven.compiler.source>
-  </properties>
 </project>
