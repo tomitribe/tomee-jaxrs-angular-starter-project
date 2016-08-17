@@ -17,50 +17,50 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-         
-  <modelVersion>4.0.0</modelVersion>
-  
-  <parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
         <artifactId>microprofile-conference</artifactId>
         <groupId>io.microprofile.showcase</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-  <artifactId>web-application</artifactId>
-  <name>Conference :: Web</name>
+    <artifactId>web-application</artifactId>
+    <name>Conference :: Web</name>
 
-  <packaging>war</packaging>
+    <packaging>war</packaging>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.tomee</groupId>
-      <artifactId>javaee-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.tomee</groupId>
-      <artifactId>arquillian-tomee-embedded</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.tomee</groupId>
-      <artifactId>tomee-jaxrs</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>javaee-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>arquillian-tomee-embedded</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>tomee-jaxrs</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-  <build>
-    <finalName>ROOT</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.tomee.maven</groupId>
-        <artifactId>tomee-maven-plugin</artifactId>
-        <configuration>
-          <tomeeVersion>${version.tomee}</tomeeVersion>
-          <tomeeClassifier>jaxrs</tomeeClassifier>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <build>
+        <finalName>ROOT</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomee.maven</groupId>
+                <artifactId>tomee-maven-plugin</artifactId>
+                <configuration>
+                    <tomeeVersion>${version.tomee}</tomeeVersion>
+                    <tomeeClassifier>jaxrs</tomeeClassifier>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
