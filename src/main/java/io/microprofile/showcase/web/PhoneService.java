@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.supertribe;
+package io.microprofile.showcase.web;
 
 import javax.ejb.Lock;
 import javax.ejb.Singleton;
