@@ -49,3 +49,4 @@ pom.xml.versionsBackup
 release.properties
 target/
 tmp/
+.distribution
