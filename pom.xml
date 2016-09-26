@@ -62,7 +62,7 @@
         <version>${tomee.version}</version>
         <configuration>
           <tomeeVersion>${tomee.version}</tomeeVersion>
-          <tomeeClassifier>plus</tomeeClassifier>
+          <tomeeClassifier>webprofile</tomeeClassifier>
         </configuration>
       </plugin>
     </plugins>
