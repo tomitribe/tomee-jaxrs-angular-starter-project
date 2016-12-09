@@ -8,13 +8,13 @@
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-package org.supertribe;
+package org.supertribe.web;
 
 
 import javax.xml.bind.annotation.XmlRootElement;
@@ -31,7 +31,7 @@ public class Phone {
     public Phone() {
     }
 
-    public Phone(int age, String carrier, String id, String name, String snippet) {
+    public Phone(final int age, final String carrier, final String id, final String name, final String snippet) {
         this.age = age;
         this.carrier = carrier;
         this.id = id;
@@ -43,7 +43,7 @@ public class Phone {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(final int age) {
         this.age = age;
     }
 
@@ -51,7 +51,7 @@ public class Phone {
         return carrier;
     }
 
-    public void setCarrier(String carrier) {
+    public void setCarrier(final String carrier) {
         this.carrier = carrier;
     }
 
@@ -59,7 +59,7 @@ public class Phone {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(final String id) {
         this.id = id;
     }
 
@@ -67,7 +67,7 @@ public class Phone {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -75,7 +75,7 @@ public class Phone {
         return snippet;
     }
 
-    public void setSnippet(String snippet) {
+    public void setSnippet(final String snippet) {
         this.snippet = snippet;
     }
 
